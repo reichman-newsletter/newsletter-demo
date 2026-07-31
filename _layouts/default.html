@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.name }}</title>
     
-    <!-- Importing Playfair Display for the masthead -->
+    <!-- Importing Playfair Display (including normal and italic weights) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
     
     <style>
         /* WSJ & Reichman Brand Tokens */
@@ -16,7 +16,7 @@
             --wsj-ink: #333333; --wsj-black: #000000; --wsj-canvas: #fcfcfc;
             --wsj-hairline: #cccccc; --wsj-subtext: #666666;
             
-            /* Updated to your exact custom hex color */
+            /* Custom Hex Color */
             --runi-blue: #1d2e96; 
             
             /* Typography Stack */
@@ -33,11 +33,12 @@
         /* Centered Header Layout */
         .header-top { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
         
-        /* Logo Styling with Playfair Display and custom blue */
+        /* Logo Styling - Now Italic and Normal Weight */
         .masthead { 
             font-family: var(--font-masthead); 
             font-size: 4.8rem; 
-            font-weight: 900; 
+            font-weight: normal; /* Removed bold */
+            font-style: italic;  /* Added italic */
             color: var(--runi-blue); 
             margin: 0; 
             line-height: 1; 
@@ -47,7 +48,7 @@
         
         .dateline { width: 100%; text-align: center; font-family: var(--font-ui); font-size: 12px; color: var(--wsj-black); border-top: 1px solid var(--wsj-black); padding: 8px 0; margin-bottom: 0; }
         
-        /* Solid Blue Category Bar using your hex code */
+        /* Solid Blue Category Bar */
         nav { 
             width: 100%; 
             display: flex; 
@@ -70,51 +71,4 @@
         nav a:hover { color: rgba(255, 255, 255, 0.7); }
 
         /* Grid Layout */
-        .page-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 0; }
-        .col { padding: 0 20px; border-right: 1px solid var(--wsj-hairline); }
-        .col.left { padding-left: 0; }
-        .col.right { border-right: none; padding-right: 0; }
-
-        /* Typography inside layout */
-        a { color: inherit; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .eyebrow { font-family: var(--font-ui); font-size: 11px; font-weight: bold; text-transform: uppercase; color: var(--runi-blue); margin-bottom: 4px; }
-        .headline-xl { font-family: var(--font-headline); font-size: 2.2rem; line-height: 1.15; margin: 0 0 12px 0; font-weight: normal; color: var(--wsj-black); }
-        .headline-l { font-family: var(--font-headline); font-size: 1.4rem; line-height: 1.25; margin: 0 0 8px 0; font-weight: normal; color: var(--wsj-black); }
-        .headline-m { font-family: var(--font-headline); font-size: 1.1rem; line-height: 1.3; margin: 0 0 6px 0; font-weight: bold; color: var(--wsj-black); }
-        .story-summary { font-size: 14px; margin: 0 0 12px 0; line-height: 1.5; }
-        .byline { font-family: var(--font-ui); font-size: 10px; font-weight: bold; text-transform: uppercase; color: var(--wsj-subtext); margin-bottom: 8px; }
-        .story-divider { border: 0; border-top: 1px dotted var(--wsj-hairline); margin: 15px 0; }
-        
-        /* Post Content Layout */
-        .post-content { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .post-content p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-top">
-            <h1 class="masthead"><a href="{{ site.baseurl }}/">The Reichman Daily</a></h1>
-        </div>
-        <div class="dateline">
-            <span id="current-date"></span> | runi.ac.il
-        </div>
-    </header>
-
-    <!-- The Category Bar -->
-    <nav>
-        <a href="{{ site.baseurl }}/">Home</a>
-        <a href="#">Israel</a>
-        <a href="#">Business</a>
-        <a href="#">Tech</a>
-        <a href="#">Opinion</a>
-    </nav>
-
-    {{ content }}
-
-    <script>
-        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', dateOptions);
-    </script>
-</body>
-</html>
+        .page-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; 
