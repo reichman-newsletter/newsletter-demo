@@ -1,0 +1,6 @@
+name: The Reichman Daily
+description: Reichman Student-led Newspaper.
+url: "https://yourusername.github.io"
+baseurl: "/reichman-daily" # Change to "" if using a custom runi.ac.il domain
+markdown: kramdown
+theme: minima # A default theme to satisfy Jekyll, though we use custom HTML
