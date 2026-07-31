@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.name }}</title>
     
-    <!-- Importing Playfair Display: A classic, highly elegant editorial serif font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <!-- Importing Playfair Display for the masthead -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     
     <style>
         /* WSJ & Reichman Brand Tokens */
         :root {
             --wsj-ink: #333333; --wsj-black: #000000; --wsj-canvas: #fcfcfc;
             --wsj-hairline: #cccccc; --wsj-subtext: #666666;
-            --runi-blue: #003058; --runi-light-blue: #0077c8;
             
-            /* Updated Logo Font */
+            /* Updated to your exact custom hex color */
+            --runi-blue: #1d2e96; 
+            
+            /* Typography Stack */
             --font-masthead: 'Playfair Display', 'Didot', 'Times New Roman', serif;
             --font-headline: 'Retina', 'Georgia', 'Times New Roman', serif;
             --font-body: 'Escrow', 'Georgia', 'Times New Roman', serif;
@@ -29,12 +33,12 @@
         /* Centered Header Layout */
         .header-top { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
         
-        /* Logo Styling */
+        /* Logo Styling with Playfair Display and custom blue */
         .masthead { 
             font-family: var(--font-masthead); 
-            font-size: 4.5rem; 
+            font-size: 4.8rem; 
             font-weight: 900; 
-            color: var(--runi-blue); /* Reichman Blue */
+            color: var(--runi-blue); 
             margin: 0; 
             line-height: 1; 
             text-align: center; 
@@ -43,7 +47,7 @@
         
         .dateline { width: 100%; text-align: center; font-family: var(--font-ui); font-size: 12px; color: var(--wsj-black); border-top: 1px solid var(--wsj-black); padding: 8px 0; margin-bottom: 0; }
         
-        /* Solid Reichman Blue Category Bar */
+        /* Solid Blue Category Bar using your hex code */
         nav { 
             width: 100%; 
             display: flex; 
@@ -58,12 +62,12 @@
             font-family: var(--font-ui); 
             font-size: 13px; 
             font-weight: bold; 
-            color: #ffffff; /* White text */
+            color: #ffffff; 
             text-decoration: none; 
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        nav a:hover { color: #cccccc; }
+        nav a:hover { color: rgba(255, 255, 255, 0.7); }
 
         /* Grid Layout */
         .page-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 0; }
@@ -71,7 +75,7 @@
         .col.left { padding-left: 0; }
         .col.right { border-right: none; padding-right: 0; }
 
-        /* Typography */
+        /* Typography inside layout */
         a { color: inherit; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .eyebrow { font-family: var(--font-ui); font-size: 11px; font-weight: bold; text-transform: uppercase; color: var(--runi-blue); margin-bottom: 4px; }
