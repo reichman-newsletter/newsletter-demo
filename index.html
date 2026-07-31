@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<main class="page-container">
+    <!-- Left Column: Business & Finance -->
+    <div class="col left">
+        <div class="eyebrow">Business & Finance</div>
+        {% for post in site.categories.finance limit:3 %}
+            <h2 class="headline-m"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p class="story-summary">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <hr class="story-divider">
+        {% endfor %}
+    </div>
+
+    <!-- Center Column: Main Featured Story -->
+    <div class="col">
+        {% for post in site.categories.featured limit:1 %}
+            <div class="eyebrow" style="color: var(--wsj-black);">Top Story</div>
+            <h1 class="headline-xl"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+            <div class="byline">By {{ post.author }}</div>
+            <p class="story-summary">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+        {% endfor %}
+    </div>
+
+    <!-- Right Column: Opinion -->
+    <div class="col right">
+        <div class="eyebrow">Opinion</div>
+        {% for post in site.categories.opinion limit:3 %}
+            <h2 class="headline-m"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <div class="byline">By {{ post.author }}</div>
+            <hr class="story-divider">
+        {% endfor %}
+    </div>
+</main>
