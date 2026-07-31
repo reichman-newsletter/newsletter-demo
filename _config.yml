@@ -3,4 +3,5 @@ description: Reichman Student-led Newspaper.
 url: "https://reichman-newsletter.github.io"
 baseurl: "/newsletter-demo"
 markdown: kramdown
-theme: minima # A default theme to satisfy Jekyll, though we use custom HTML
+theme: minima
+future: true
