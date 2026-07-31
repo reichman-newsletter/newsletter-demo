@@ -4,28 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.name }}</title>
-    <link href="https://fonts.cdnfonts.com/css/engravers-mt" rel="stylesheet">
+    
+    <!-- Importing Playfair Display: A classic, highly elegant editorial serif font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
     <style>
         /* WSJ & Reichman Brand Tokens */
         :root {
             --wsj-ink: #333333; --wsj-black: #000000; --wsj-canvas: #fcfcfc;
             --wsj-hairline: #cccccc; --wsj-subtext: #666666;
             --runi-blue: #003058; --runi-light-blue: #0077c8;
-            --font-masthead: 'Engravers MT', 'Times New Roman', serif;
+            
+            /* Updated Logo Font */
+            --font-masthead: 'Playfair Display', 'Didot', 'Times New Roman', serif;
             --font-headline: 'Retina', 'Georgia', 'Times New Roman', serif;
             --font-body: 'Escrow', 'Georgia', 'Times New Roman', serif;
             --font-ui: 'Retina Sans', 'Arial', 'Helvetica', sans-serif;
         }
 
         body { margin: 0; padding: 0; font-family: var(--font-body); background-color: var(--wsj-canvas); color: var(--wsj-ink); line-height: 1.45; }
-        header { max-width: 1200px; margin: 0 auto; padding: 15px 20px 0 20px; }
-        .header-top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px; }
-        .masthead { font-family: var(--font-masthead); font-size: 3.8rem; font-weight: normal; color: var(--wsj-black); margin: 0; line-height: 1; text-align: center; text-transform: uppercase; }
+        
+        header { max-width: 1200px; margin: 0 auto; padding: 25px 20px 0 20px; }
+        
+        /* Centered Header Layout */
+        .header-top { display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
+        
+        /* Logo Styling */
+        .masthead { 
+            font-family: var(--font-masthead); 
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            color: var(--runi-blue); /* Reichman Blue */
+            margin: 0; 
+            line-height: 1; 
+            text-align: center; 
+        }
         .masthead a { text-decoration: none; color: inherit; }
-        .dateline { width: 100%; text-align: center; font-family: var(--font-ui); font-size: 12px; color: var(--wsj-black); border-top: 1px solid var(--wsj-black); border-bottom: 1px solid var(--wsj-black); padding: 6px 0; margin-bottom: 10px; }
-        nav { width: 100%; display: flex; justify-content: center; gap: 25px; border-bottom: 4px solid var(--runi-blue); padding-bottom: 12px; margin-bottom: 25px; }
-        nav a { font-family: var(--font-ui); font-size: 13px; font-weight: bold; color: var(--wsj-black); text-decoration: none; }
-        nav a:hover { color: var(--runi-light-blue); }
+        
+        .dateline { width: 100%; text-align: center; font-family: var(--font-ui); font-size: 12px; color: var(--wsj-black); border-top: 1px solid var(--wsj-black); padding: 8px 0; margin-bottom: 0; }
+        
+        /* Solid Reichman Blue Category Bar */
+        nav { 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            background-color: var(--runi-blue); 
+            padding: 12px 0; 
+            margin-bottom: 25px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a { 
+            font-family: var(--font-ui); 
+            font-size: 13px; 
+            font-weight: bold; 
+            color: #ffffff; /* White text */
+            text-decoration: none; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav a:hover { color: #cccccc; }
 
         /* Grid Layout */
         .page-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 0; }
@@ -57,14 +95,16 @@
         <div class="dateline">
             <span id="current-date"></span> | runi.ac.il
         </div>
-        <nav>
-            <a href="{{ site.baseurl }}/">Home</a>
-            <a href="#">Israel</a>
-            <a href="#">Business</a>
-            <a href="#">Tech</a>
-            <a href="#">Opinion</a>
-        </nav>
     </header>
+
+    <!-- The Category Bar -->
+    <nav>
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="#">Israel</a>
+        <a href="#">Business</a>
+        <a href="#">Tech</a>
+        <a href="#">Opinion</a>
+    </nav>
 
     {{ content }}
 
