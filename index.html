@@ -2,33 +2,51 @@
 layout: default
 ---
 <main class="page-container">
-    <!-- Left Column: Business & Finance -->
+    
+    <!-- LEFT COLUMN: Business, Economy, Politics -->
     <div class="col left">
-        <div class="eyebrow">Business & Finance</div>
-        {% for post in site.categories.finance limit:3 %}
+        <div class="eyebrow">Economy & Politics</div>
+        
+        <!-- Filter for Left Column Categories -->
+        {% assign left_posts = site.posts | where_exp: "post", "post.categories contains 'business' or post.categories contains 'economy' or post.categories contains 'politics'" %}
+        
+        {% for post in left_posts limit:4 %}
             <h2 class="headline-m"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p class="story-summary">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <div class="byline">{{ post.categories | join: ", " | capitalize }} | By {{ post.author }}</div>
+            <p class="story-summary">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
             <hr class="story-divider">
         {% endfor %}
     </div>
 
-    <!-- Center Column: Main Featured Story -->
+    <!-- CENTER COLUMN: Top Stories / Big Headlines -->
     <div class="col">
-        {% for post in site.categories.featured limit:1 %}
-            <div class="eyebrow" style="color: var(--wsj-black);">Top Story</div>
+        <!-- Filter for Center Column Categories -->
+        {% assign center_posts = site.posts | where_exp: "post", "post.categories contains 'top-story' or post.categories contains 'headline'" %}
+        
+        {% for post in center_posts limit:2 %}
+            <div class="eyebrow" style="color: var(--wsj-black);">Featured Story</div>
             <h1 class="headline-xl"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
             <div class="byline">By {{ post.author }}</div>
-            <p class="story-summary">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+            <p class="story-summary" style="font-size: 16px;">{{ post.excerpt | strip_html | truncatewords: 45 }}</p>
+            
+            {% if forloop.first == true and forloop.length > 1 %}
+                <hr class="story-divider">
+            {% endif %}
         {% endfor %}
     </div>
 
-    <!-- Right Column: Opinion -->
+    <!-- RIGHT COLUMN: Campus News, Life, Arts, Opinion -->
     <div class="col right">
-        <div class="eyebrow">Opinion</div>
-        {% for post in site.categories.opinion limit:3 %}
+        <div class="eyebrow">Campus & Culture</div>
+        
+        <!-- Filter for Right Column Categories -->
+        {% assign right_posts = site.posts | where_exp: "post", "post.categories contains 'campus' or post.categories contains 'life' or post.categories contains 'arts' or post.categories contains 'opinion'" %}
+        
+        {% for post in right_posts limit:4 %}
             <h2 class="headline-m"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <div class="byline">By {{ post.author }}</div>
+            <div class="byline">{{ post.categories | join: ", " | capitalize }} | By {{ post.author }}</div>
             <hr class="story-divider">
         {% endfor %}
     </div>
+
 </main>
