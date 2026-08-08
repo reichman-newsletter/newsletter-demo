@@ -18,6 +18,9 @@ layout: default
             <!-- ONLY show if published within the last 3 days -->
             {% if post_time >= cutoff_time %}
                 {% if post.categories contains 'business-finance' or post.categories contains 'politics' %}
+                    {% if post.featured_image %}
+                        <img src="{{ site.baseurl }}/assets/images/{{ post.featured_image }}" style="width:100%; height:auto; margin-bottom:8px; border:1px solid var(--wsj-hairline);">
+                    {% endif %}
                     <h2 class="headline-m"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
                     <div class="byline">{{ post.categories | join: ", " | replace: "-", " " | capitalize }} | By {{ post.author }}</div>
                     <p class="story-summary">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
@@ -39,6 +42,9 @@ layout: default
             {% if post_time >= cutoff_time %}
                 {% if post.categories contains 'top-story' %}
                     <div class="eyebrow" style="color: var(--wsj-black);">Featured Story</div>
+                    {% if post.featured_image %}
+                        <img src="{{ site.baseurl }}/assets/images/{{ post.featured_image }}" style="width:100%; height:auto; margin-bottom:12px; border:1px solid var(--wsj-hairline);">
+                    {% endif %}
                     <h1 class="headline-xl"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
                     <div class="byline">By {{ post.author }}</div>
                     <p class="story-summary" style="font-size: 16px;">{{ post.excerpt | strip_html | truncatewords: 45 }}</p>
@@ -64,6 +70,9 @@ layout: default
             
             {% if post_time >= cutoff_time %}
                 {% if post.categories contains 'campus-culture' or post.categories contains 'opinion' or post.categories contains 'official-updates' %}
+                    {% if post.featured_image %}
+                        <img src="{{ site.baseurl }}/assets/images/{{ post.featured_image }}" style="width:100%; height:auto; margin-bottom:8px; border:1px solid var(--wsj-hairline);">
+                    {% endif %}
                     <h2 class="headline-m"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
                     <div class="byline">{{ post.categories | join: ", " | replace: "-", " " | capitalize }} | By {{ post.author }}</div>
                     <hr class="story-divider">

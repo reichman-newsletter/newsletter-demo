@@ -3,6 +3,7 @@ layout: post
 title: "Sun, Surf, and Zero Syllabi: Have an Amazing Summer!"
 author: "Elias Absawy"
 categories: [official-updates]
+featured_image: "2026-08-08-summer-break.jpg"
 ---
 That's a wrap on another intense academic year at Reichman University. You've survived the exams, the endless library sessions, and the caffeine overdoses. Now, it's time to completely disconnect.
 
