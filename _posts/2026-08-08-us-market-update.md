@@ -2,7 +2,7 @@
 layout: post
 title: "Wall Street Vibes: AI Exhaustion and the Elusive 'Soft Landing'"
 author: "Elias Absawy"
-categories: [business-finance]
+categories: [top-story]
 featured_image: "2026-08-08-us-market.jpg"
 ---
 Across the pond, Wall Street is officially entering its post-hype hangover. We've spent the last two years hyperventilating over every AI chip announcement, and now the market is finally asking for the receipts. 
