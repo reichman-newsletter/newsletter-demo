@@ -1,0 +1,20 @@
+---
+layout: default
+title: Politics Archive
+---
+<main class="page-container" style="display: block; max-width: 800px;">
+    <h1 class="headline-xl" style="margin-top: 20px;">Politics</h1>
+    <hr class="story-divider" style="border-top: 2px solid var(--runi-blue);">
+    
+    {% for post in site.posts %}
+        {% if post.categories contains 'politics' %}
+            <div style="margin-bottom: 30px;">
+                <div class="eyebrow">{{ post.date | date: "%B %-d, %Y" }}</div>
+                <h2 class="headline-l"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                <div class="byline">By {{ post.author }}</div>
+                <p class="story-summary">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+            </div>
+            <hr class="story-divider">
+        {% endif %}
+    {% endfor %}
+</main>

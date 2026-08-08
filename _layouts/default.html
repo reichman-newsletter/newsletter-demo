@@ -13,7 +13,7 @@
     <style>
         /* WSJ & Reichman Brand Tokens */
         :root {
-            --wsj-ink: #333333; --wsj-black: #000000; --wsj-canvas: #F7F5F0;
+            --wsj-ink: #333333; --wsj-black: #000000; --wsj-canvas: #fcfcfc;
             --wsj-hairline: #cccccc; --wsj-subtext: #666666;
             
             /* Custom Hex Color */
@@ -37,8 +37,8 @@
         .masthead { 
             font-family: var(--font-masthead); 
             font-size: 4.8rem; 
-            font-weight: normal; /* Removed bold */
-            font-style: italic;  /* Added italic */
+            font-weight: normal; 
+            font-style: italic;  
             color: var(--runi-blue); 
             margin: 0; 
             line-height: 1; 
@@ -105,10 +105,11 @@
     <!-- The Category Bar -->
     <nav>
         <a href="{{ site.baseurl }}/">Home</a>
-        <a href="#">Israel</a>
-        <a href="#">Business</a>
-        <a href="#">Tech</a>
-        <a href="#">Opinion</a>
+        <a href="{{ site.baseurl }}/business.html">Business & Finance</a>
+        <a href="{{ site.baseurl }}/politics.html">Politics</a>
+        <a href="{{ site.baseurl }}/campus-culture.html">Campus & Culture</a>
+        <a href="{{ site.baseurl }}/opinion.html">Opinion</a>
+        <a href="{{ site.baseurl }}/official-updates.html">Official Updates</a>
     </nav>
 
     {{ content }}
