@@ -2,7 +2,7 @@
 layout: post
 title: "TA-35 Reality Check: Tech Holds the Line While the Shekel Swings"
 author: "Elias Absawy"
-categories: [business-finance, top-story]
+categories: [business-finance]
 featured_image: "2026-08-08-israel-market.jpg"
 ---
 Let's talk about the Tel Aviv Stock Exchange. If you've been watching the TA-35 lately, you know it's a rollercoaster powered by equal parts geopolitical whiplash and pure startup adrenaline.
